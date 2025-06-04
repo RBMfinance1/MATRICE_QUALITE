@@ -616,7 +616,7 @@ function loadPhotos() {
         <div class="search-section">
             <div style="margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
                 <label for="csvFile" style="display: block; margin-bottom: 10px; font-weight: 600;">
-                    📁 Charger le fichier BDD.csv depuis votre ordinateur :
+                    📁 Charger le fichier .csv depuis votre ordinateur :
                 </label>
                 <input type="file" id="csvFile" accept=".csv" style="margin-bottom: 10px;">
                 <button onclick="loadFromFile()" style="background: #28a745;">Charger le fichier</button>
@@ -684,7 +684,7 @@ function loadPhotos() {
                 });
                 
                 database = parsed.data.map(row => ({
-                    reference: row['Référence'] || row['R�f�rence'],
+                    reference: row['Référence'] || row['R f rence'],
                     codeArticle: row['Code article'],
                     couleurFR: row['Couleur (FR)'],
                     couleurUS: row['Couleur (US)'],
@@ -693,7 +693,7 @@ function loadPhotos() {
                     marque: row['Marque'],
                     genre: row['Genre (FR)'],
                     ean: row['EAN'],
-                    quantite: row['QTÉ'] || row['QT�'],
+                    quantite: row['QTÉ'] || row['QT '],
                     descriptifFR: row['Descriptif (FR)'],
                     composition: row['Composition (FR)'],
                     pays: row['Pays']
