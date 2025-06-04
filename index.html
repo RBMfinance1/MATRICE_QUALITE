@@ -56,7 +56,6 @@ function loadPhotos() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Matrice Qualité</title>
-    <link rel="icon" href="favicon.png" type="image/png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
@@ -600,23 +599,13 @@ function loadPhotos() {
     </style>
 </head>
 <body>
-<script>
-  const motDePasse = "2626";
-  const saisie = prompt("🔒 Cette page est protégée. Veuillez entrer le mot de passe :");
-
-  if (saisie !== motDePasse) {
-    alert("⛔ Accès refusé.");
-    window.location.href = "about:blank";
-  }
-</script>
-
     <div class="container">
         <h1>🔍 Matrice Qualité</h1>
         
         <div class="search-section">
             <div style="margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
                 <label for="csvFile" style="display: block; margin-bottom: 10px; font-weight: 600;">
-                    📁 Charger le fichier .csv depuis votre ordinateur :
+                    📁 Charger le fichier BDD.csv depuis votre ordinateur :
                 </label>
                 <input type="file" id="csvFile" accept=".csv" style="margin-bottom: 10px;">
                 <button onclick="loadFromFile()" style="background: #28a745;">Charger le fichier</button>
@@ -684,7 +673,7 @@ function loadPhotos() {
                 });
                 
                 database = parsed.data.map(row => ({
-                    reference: row['Référence'] || row['R f rence'],
+                    reference: row['Référence'] || row['R�f�rence'],
                     codeArticle: row['Code article'],
                     couleurFR: row['Couleur (FR)'],
                     couleurUS: row['Couleur (US)'],
@@ -693,7 +682,7 @@ function loadPhotos() {
                     marque: row['Marque'],
                     genre: row['Genre (FR)'],
                     ean: row['EAN'],
-                    quantite: row['QTÉ'] || row['QT '],
+                    quantite: row['QTÉ'] || row['QT�'],
                     descriptifFR: row['Descriptif (FR)'],
                     composition: row['Composition (FR)'],
                     pays: row['Pays']
